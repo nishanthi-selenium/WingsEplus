@@ -42,12 +42,13 @@ public class base {
 
 		if (browserName.contains("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					"C://chromedriver.exe");
+					"chromedriver");
 			ChromeOptions options = new ChromeOptions();
 			if (browserName.contains("headless")) {
 				options.addArguments("headless");
 			}
-			driver = new ChromeDriver(options);
+			//driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 			// execute in chrome driver
 
 		} else if (browserName.equals("firefox")) {
