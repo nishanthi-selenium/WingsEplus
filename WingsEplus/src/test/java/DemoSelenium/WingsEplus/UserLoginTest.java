@@ -2,23 +2,19 @@ package DemoSelenium.WingsEplus;
 
 import java.io.IOException;
 
-import junit.framework.Assert;
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-import FactoryDesignPattern.DriverManager;
-import FactoryDesignPattern.DriverManagerFactory;
 import Pageobject.HomePage;
 import Pageobject.LoginPage;
 import Pageobject.LoginWelcomePage;
@@ -28,7 +24,7 @@ import Resources.Base;
 public class UserLoginTest extends Base {
 
 	public WebDriver driver;
-	DriverManager driverManager;
+	
 	public static Logger log = LogManager.getLogger(Base.class.getName());
 
 	@BeforeTest

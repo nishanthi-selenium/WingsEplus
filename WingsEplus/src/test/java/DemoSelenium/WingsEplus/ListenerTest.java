@@ -1,23 +1,26 @@
 package DemoSelenium.WingsEplus;
 
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
-
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.SkipException;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
-public class ListenerTest {
+import Resources.Base;
 
+public class ListenerTest extends Base{
+	
+	public WebDriver driver;
 	@BeforeMethod
 	public void beforeMethod() {
 		System.out
@@ -31,9 +34,12 @@ public class ListenerTest {
 	}
 
 	@BeforeClass
-	public void beforeClass() {
+	public void beforeClass(ITestContext context) throws IOException {
+		driver = initializeDriver();
 		System.out
 				.println("Before Class will always execute prior to Before Method and Test Method ");
+		context.setAttribute("driver", driver);
+	
 	}
 
 	@AfterClass

@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="methods" >
 	<listeners>
-		<listener class-name="Utilities.Listeners" />
+		<listener class-name="ExtentReport.Listeners" />
 
 	</listeners>
 	<test name="Test">
